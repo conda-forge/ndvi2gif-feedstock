@@ -1,11 +1,11 @@
-About ndvi2gif
-==============
+About ndvi2gif-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ndvi2gif-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/Digdgeo/Ndvi2Gif
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ndvi2gif-feedstock/blob/main/LICENSE.txt)
 
 Summary: Python package to create ndvi seasonal composites, and download them as gif and geotiff
 
