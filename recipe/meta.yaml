@@ -1,5 +1,5 @@
 {% set name = "ndvi2gif" %}
-{% set version = "0.0.9" %}
+{% set version = "0.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,16 +7,17 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 22b8dec0043a28b64b995de059896d421f0b13e2b9083ceb36a01a1f2ead5c04
+  sha256: 300e5495d0306f472c1aa34a522273e3066b9f50d3eb25cee17cd3b6177eea54
 
 build:
-  number: 3
+  noarch: python
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
+    - python >=3.7
     - pip
-    - python
     - setuptools
   run:
     - python >=3.7
@@ -28,11 +29,10 @@ test:
 
 about:
   home: https://github.com/Digdgeo/Ndvi2Gif
-  # https://choosealicense.com/licenses/mit/
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: Python package to create ndvi seasonal composites, and download them as gif and geotiff
+  summary: Python package to create NDVI seasonal composites, and download them as GIF and GeoTIFF
   doc_url: https://github.com/Digdgeo/Ndvi2Gif
   dev_url: https://github.com/Digdgeo/Ndvi2Gif
 
