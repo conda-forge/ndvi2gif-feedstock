@@ -1,5 +1,5 @@
 {% set name = "ndvi2gif" %}
-{% set version = "0.0.4" %}
+{% set version = "0.0.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b906c702f1e0e9c05b0ca8182b4781c9cb468da95517c7892eec60cc60484474
+  sha256: 22b8dec0043a28b64b995de059896d421f0b13e2b9083ceb36a01a1f2ead5c04
 
 build:
   number: 3
@@ -17,9 +17,10 @@ requirements:
   host:
     - pip
     - python
+    - setuptools
   run:
-    - geemap >=0.6.10
-    - python
+    - python >=3.7
+    - geemap ==0.29.5
 
 test:
   imports:
