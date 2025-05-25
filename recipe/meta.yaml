@@ -17,13 +17,19 @@ build:
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
     - setuptools
     - wheel
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - geemap >=0.29.5
+    - geopandas
+    - fiona
+    - earthengine-api
+    - ipyleaflet
+    - folium
+    - ipywidgets
 
 test:
   imports:
