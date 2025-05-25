@@ -17,12 +17,12 @@ build:
 
 requirements:
   host:
-    - {{ pin_compatible('python', min_pin=python_min) }}
+    - python
     - pip
     - setuptools
     - wheel
   run:
-    - {{ pin_compatible('python', min_pin=python_min) }}
+    - python >=3.7
     - geemap >=0.29.5
 
 test:
