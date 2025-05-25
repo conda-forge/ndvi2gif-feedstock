@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 300e5495d0306f472c1aa34a522273e3066b9f50d3eb25cee17cd3b6177eea54
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 684bbc06c3084b824762c8fc798ac0f122dd89e391afdfb876c0f7c5e10b70c6
 
 build:
   noarch: python
@@ -17,12 +17,12 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
+    - {{ pin_compatible('python', min_pin=python_min) }}
     - pip
     - setuptools
     - wheel
   run:
-    - python >={{ python_min }}
+    - {{ pin_compatible('python', min_pin=python_min) }}
     - geemap >=0.29.5
 
 test:
