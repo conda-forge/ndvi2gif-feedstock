@@ -1,5 +1,6 @@
 {% set name = "ndvi2gif" %}
 {% set version = "0.1.5" %}
+{% set python_min = "3.7" %}
 
 package:
   name: {{ name|lower }}
@@ -16,13 +17,13 @@ build:
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python
+    - python >={{ python_min }}
     - numpy <2.0
-    - matplotlib
+    - matplotlib-base
     - pillow
     - imageio
     - tqdm
@@ -46,8 +47,6 @@ about:
   summary: Generate seasonal composites and extract statistical summaries from any remote sensing index using Google Earth Engine and geemap
   description: |
     NDVI2GIF allows researchers to generate seasonal composites and extract summaries from any GEE-compatible index. Output includes animations and statistical summaries useful for vegetation monitoring.
-  author: Diego García Díaz
-  author_email: diegogarcia@ebd.csic.es
   doc_url: https://github.com/Digdgeo/Ndvi2Gif
   dev_url: https://github.com/Digdgeo/Ndvi2Gif
 
