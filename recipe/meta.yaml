@@ -18,17 +18,21 @@ build:
 requirements:
   host:
     - pip
-    - python {{ python_min }}
+    - python >={{ python_min }}
     - setuptools
   run:
     - python >={{ python_min }}
     - geemap >=0.29.5
+    - earthengine-api
+    - geopandas
+    - pandas
+    - matplotlib
 
 test:
   imports:
     - ndvi2gif
   requires:
-    - python {{ python_min }}
+    - python >={{ python_min }}
 
 about:
   home: https://github.com/Digdgeo/Ndvi2Gif
@@ -42,5 +46,4 @@ about:
 extra:
   recipe-maintainers:
     - Digdgeo
-
 
