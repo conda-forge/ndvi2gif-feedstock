@@ -14,23 +14,39 @@ build:
   number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  # Skip temporalmente para evitar errores de infraestructura
+  skip: true  # [py<39]
 
 requirements:
   host:
     - python >={{ python_min }}
     - pip
+    - setuptools
   run:
     - python >={{ python_min }}
+    - geemap
 
 test:
   imports:
     - ndvi2gif
+  commands:
+    - python -c "import ndvi2gif; print('ndvi2gif successfully imported')"
+  requires:
+    - python >={{ python_min }}
 
 about:
   home: https://github.com/Digdgeo/Ndvi2Gif
-  summary: Python library to create multi seasonal index composites
+  summary: Python library to create multi seasonal index composites of Earth Observation indexes from satellite data
+  description: |
+    Ndvi2Gif is a Python library designed to simplify access to global satellite data 
+    through the Google Earth Engine platform. While its name highlights the ability to create 
+    seasonal GIF animations, the true power of this tool lies in its capability to compute 
+    and export pixel-wise statistics for any region on Earth, across any time span covered 
+    by supported remote sensing datasets.
   license: MIT
   license_family: MIT
+  doc_url: https://github.com/Digdgeo/Ndvi2Gif
+  dev_url: https://github.com/Digdgeo/Ndvi2Gif
 
 extra:
   recipe-maintainers:
