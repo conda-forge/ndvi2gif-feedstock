@@ -1,5 +1,6 @@
 {% set name = "ndvi2gif" %}
 {% set version = "0.2.0" %}
+{% set python_min = "3.7" %}
 
 package:
   name: {{ name|lower }}
@@ -17,25 +18,28 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
     - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - geemap >=0.29.5
 
 test:
   imports:
     - ndvi2gif
+  requires:
+    - python {{ python_min }}
 
 about:
   home: https://github.com/Digdgeo/Ndvi2Gif
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: Python library to create seasonal composites of vegetation, water, and snow indexes from satellite data
+  summary: Python library to create multi seasonal index composites of Earth Observation indexes from satellite data
   doc_url: https://github.com/Digdgeo/Ndvi2Gif
   dev_url: https://github.com/Digdgeo/Ndvi2Gif
 
 extra:
   recipe-maintainers:
     - Digdgeo
+
