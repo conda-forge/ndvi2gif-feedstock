@@ -7,11 +7,14 @@ Home: https://github.com/Digdgeo/Ndvi2Gif
 
 Package license: MIT
 
-Summary: Python package to create NDVI seasonal composites, and download them as GIF and GeoTIFF
+Summary: Generate seasonal composites based on statistical summaries of available indices using Google Earth Engine and Geemap
 
 Development: https://github.com/Digdgeo/Ndvi2Gif
 
 Documentation: https://github.com/Digdgeo/Ndvi2Gif
+
+NDVI2GIF allows researchers to generate multi seasonal composites based on statistical summaries of available Earth Observation indices. The package is not limited to vegetation indices and can work with any compatible remote sensing index available in GEE.
+
 
 Current build status
 ====================
