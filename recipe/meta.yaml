@@ -1,6 +1,5 @@
 {% set name = "ndvi2gif" %}
-{% set version = "0.2.0" %}
-{% set python_min = "3.8" %}
+{% set version = "0.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2ad9ccc4ba599a859c03fd97e5cc0ece4c12e963dcd64c4d1c8b892a3b533779
+  sha256: 0a62c8f3f99bf0cbedba02b6e5e3b34da72de5d5520218893f61b838e8c5067f
 
 build:
   noarch: python
@@ -17,11 +16,11 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - pip
     - setuptools
   run:
-    - python >={{ python_min }}
+    - python
     - numpy <2.0
     - matplotlib-base
     - pillow
@@ -40,7 +39,7 @@ test:
   imports:
     - ndvi2gif
   requires:
-    - python {{ python_min }}
+    - python
 
 about:
   home: https://github.com/Digdgeo/Ndvi2Gif
