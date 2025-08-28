@@ -1,5 +1,5 @@
 {% set name = "ndvi2gif" %}
-{% set version = "0.4.1" %}
+{% set version = "0.5.0" %}
 {% set python_min = "3.8" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0a62c8f3f99bf0cbedba02b6e5e3b34da72de5d5520218893f61b838e8c5067f
+  sha256: 15cedbf16628d6a8ec7b96cc0270adce5a143289638773152eb79a1dae9de490
 
 build:
   noarch: python
@@ -17,30 +17,34 @@ build:
 
 requirements:
   host:
+    - python {{ python_min }}
     - pip
-    - python >={{ python_min }}
     - setuptools
   run:
     - python >={{ python_min }}
+    - geemap >=0.29.5
+    - earthengine-api >=0.1.347
     - numpy <2.0
+    - pandas
+    - scipy
     - matplotlib-base
+    - seaborn
     - pillow
     - imageio
     - tqdm
-    - geemap >=0.29.5
-    - earthengine-api >=0.1.347
+    - requests
     - geopandas
     - fiona
-    - ipyleaflet
-    - folium
-    - ipywidgets
-    - deims
+    - pycrs
+    - deims >=4.0
+    - statsmodels >=0.13
+    - scikit-learn >=1.0
 
 test:
   imports:
     - ndvi2gif
   requires:
-    - python >={{ python_min }}
+    - python {{ python_min }}
 
 about:
   home: https://github.com/Digdgeo/Ndvi2Gif
