@@ -1,5 +1,5 @@
 {% set name = "ndvi2gif" %}
-{% set version = "0.4.1" %}
+{% set version = "0.5.0" %}
 {% set python_min = "3.8" %}
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0a62c8f3f99bf0cbedba02b6e5e3b34da72de5d5520218893f61b838e8c5067f
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 15cedbf16628d6a8ec7b96cc0270adce5a143289638773152eb79a1dae9de490
 
 build:
   noarch: python
