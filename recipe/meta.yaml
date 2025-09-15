@@ -54,15 +54,18 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: Multi-seasonal remote sensing analysis suite: composites, SAR preprocessing, time series analytics, and land cover classification with Google Earth Engine
+  summary: Multi-seasonal remote sensing analysis suite with machine learning classification using Google Earth Engine
   description: |
     NDVI2GIF is a comprehensive Python library for multi-seasonal remote sensing analysis using Google Earth Engine.
+    This version adds complete land cover classification capabilities with supervised and unsupervised algorithms,
+    enhanced export features to Google Drive and Earth Engine Assets, and comprehensive documentation coverage.
     
-    Key features in v0.6.0:
-    - Seasonal composites for 40+ vegetation, water, and geological indices
-    - SAR preprocessing with Sentinel-1 ARD processor  
-    - Time series analysis with phenological metrics
-    - NEW: Complete land cover classification module (supervised & unsupervised)
-    - NEW: Enhanced export capabilities to Google Drive and Earth Engine Assets
-    - 15+ classification algorithms including Random Forest, SVM, K-means
-    - 95%+ documentation coverage with comprehensive examples
+    Features include seasonal composites for 40+ vegetation indices, SAR preprocessing with Sentinel-1 ARD processor,
+    time series analysis with phenological metrics, 15+ classification algorithms including Random Forest and SVM,
+    and advanced export capabilities for research workflows.
+  doc_url: https://github.com/Digdgeo/Ndvi2Gif
+  dev_url: https://github.com/Digdgeo/Ndvi2Gif
+
+extra:
+  recipe-maintainers:
+    - Digdgeo
