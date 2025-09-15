@@ -1,5 +1,5 @@
 {% set name = "ndvi2gif" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 {% set python_min = "3.8" %}
 
 package:
@@ -7,17 +7,17 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 15cedbf16628d6a8ec7b96cc0270adce5a143289638773152eb79a1dae9de490
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: ed426588f1af16283a96b304194a587170f812d84585e3408269ebe9c4f1f351
 
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: python -m pip install . -vv
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python >={{ python_min }}
     - pip
     - setuptools
   run:
@@ -27,7 +27,7 @@ requirements:
     - numpy <2.0
     - pandas
     - scipy
-    - matplotlib-base
+    - matplotlib
     - seaborn
     - pillow
     - imageio
@@ -43,17 +43,26 @@ requirements:
 test:
   imports:
     - ndvi2gif
+    - ndvi2gif.s1_ard
+    - ndvi2gif.timeseries
+    - ndvi2gif.clasification
   requires:
-    - python {{ python_min }}
+    - python >={{ python_min }}
 
 about:
   home: https://github.com/Digdgeo/Ndvi2Gif
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: Generate seasonal composites based on statistical summaries of available indices using Google Earth Engine and Geemap
+  summary: Multi-seasonal remote sensing analysis suite with machine learning classification using Google Earth Engine
   description: |
-    NDVI2GIF allows researchers to generate multi seasonal composites based on statistical summaries of available Earth Observation indices. The package is not limited to vegetation indices and can work with any compatible remote sensing index available in GEE.
+    NDVI2GIF is a comprehensive Python library for multi-seasonal remote sensing analysis using Google Earth Engine.
+    This version adds complete land cover classification capabilities with supervised and unsupervised algorithms,
+    enhanced export features to Google Drive and Earth Engine Assets, and comprehensive documentation coverage.
+    
+    Features include seasonal composites for 40+ vegetation indices, SAR preprocessing with Sentinel-1 ARD processor,
+    time series analysis with phenological metrics, 15+ classification algorithms including Random Forest and SVM,
+    and advanced export capabilities for research workflows.
   doc_url: https://github.com/Digdgeo/Ndvi2Gif
   dev_url: https://github.com/Digdgeo/Ndvi2Gif
 
