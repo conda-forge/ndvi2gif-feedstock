@@ -1,5 +1,5 @@
 {% set name = "ndvi2gif" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 {% set python_min = "3.8" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ed426588f1af16283a96b304194a587170f812d84585e3408269ebe9c4f1f351
+  sha256: ff6a6fe389b34eeddfea70ee8cd16d227f61f4143983b46d91d17092897f8927
 
 build:
   noarch: python
@@ -59,7 +59,7 @@ about:
     NDVI2GIF is a comprehensive Python library for multi-seasonal remote sensing analysis using Google Earth Engine.
     This version adds complete land cover classification capabilities with supervised and unsupervised algorithms,
     enhanced export features to Google Drive and Earth Engine Assets, and comprehensive documentation coverage.
-    
+
     Features include seasonal composites for 40+ vegetation indices, SAR preprocessing with Sentinel-1 ARD processor,
     time series analysis with phenological metrics, 15+ classification algorithms including Random Forest and SVM,
     and advanced export capabilities for research workflows.
