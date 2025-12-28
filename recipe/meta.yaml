@@ -1,5 +1,5 @@
 {% set name = "ndvi2gif" %}
-{% set version = "0.6.0" %}
+{% set version = "1.0.0" %}
 {% set python_min = "3.8" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ed426588f1af16283a96b304194a587170f812d84585e3408269ebe9c4f1f351
+  sha256: a4e29c8d3127cc7422aa49e71be12f446e6f82164aa653056787e12cb81863aa
 
 build:
   noarch: python
@@ -54,16 +54,20 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: Multi-seasonal remote sensing analysis suite with machine learning classification using Google Earth Engine
+  summary: Multi-seasonal remote sensing and climate analysis suite with machine learning classification using Google Earth Engine
   description: |
-    NDVI2GIF is a comprehensive Python library for multi-seasonal remote sensing analysis using Google Earth Engine.
-    This version adds complete land cover classification capabilities with supervised and unsupervised algorithms,
-    enhanced export features to Google Drive and Earth Engine Assets, and comprehensive documentation coverage.
-    
-    Features include seasonal composites for 40+ vegetation indices, SAR preprocessing with Sentinel-1 ARD processor,
-    time series analysis with phenological metrics, 15+ classification algorithms including Random Forest and SVM,
-    and advanced export capabilities for research workflows.
-  doc_url: https://github.com/Digdgeo/Ndvi2Gif
+    NDVI2GIF is a comprehensive Python library for multi-seasonal remote sensing and climate analysis using Google Earth Engine.
+    Version 1.0.0 is the first stable release, expanding beyond vegetation monitoring into comprehensive climate analysis.
+
+    Key features include:
+    - 88 variables across 7 satellite and climate platforms (Sentinel-1/2/3, Landsat, MODIS, ERA5-Land, CHIRPS)
+    - ERA5-Land climate reanalysis (47 variables, 1950-present): temperature, precipitation, soil moisture, radiation, wind
+    - CHIRPS high-resolution precipitation (1981-present, ~5.5km)
+    - 40+ vegetation and environmental indices with SAR preprocessing
+    - 8 machine learning classification algorithms (supervised and unsupervised)
+    - Time series analysis with trend detection and phenology metrics
+    - Complete Jupyter Book documentation for research workflows
+  doc_url: https://digdgeo.github.io/Ndvi2Gif/
   dev_url: https://github.com/Digdgeo/Ndvi2Gif
 
 extra:
