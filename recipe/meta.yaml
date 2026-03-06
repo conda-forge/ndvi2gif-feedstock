@@ -1,5 +1,5 @@
 {% set name = "ndvi2gif" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 {% set python_min = "3.8" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a4e29c8d3127cc7422aa49e71be12f446e6f82164aa653056787e12cb81863aa
+  sha256: a7ba036b26a5cfca093e5d1acd41005afa8b344fe8e1932510fdb51acd5b0c09
 
 build:
   noarch: python
@@ -57,10 +57,10 @@ about:
   summary: Multi-seasonal remote sensing and climate analysis suite with machine learning classification using Google Earth Engine
   description: |
     NDVI2GIF is a comprehensive Python library for multi-seasonal remote sensing and climate analysis using Google Earth Engine.
-    Version 1.0.0 is the first stable release, expanding beyond vegetation monitoring into comprehensive climate analysis.
+    Version 1.1.0 adds the Floating Algae Index (FAI) for cyanobacterial bloom detection in water bodies.
 
     Key features include:
-    - 88 variables across 7 satellite and climate platforms (Sentinel-1/2/3, Landsat, MODIS, ERA5-Land, CHIRPS)
+    - 89 variables across 7 satellite and climate platforms (Sentinel-1/2/3, Landsat, MODIS, ERA5-Land, CHIRPS)
     - ERA5-Land climate reanalysis (47 variables, 1950-present): temperature, precipitation, soil moisture, radiation, wind
     - CHIRPS high-resolution precipitation (1981-present, ~5.5km)
     - 40+ vegetation and environmental indices with SAR preprocessing
