@@ -7,23 +7,33 @@ Home: https://github.com/Digdgeo/Ndvi2Gif
 
 Package license: MIT
 
-Summary: Generate seasonal composites based on statistical summaries of available indices using Google Earth Engine and Geemap
+Summary: Multi-seasonal remote sensing analysis suite with Google Earth Engine
 
 Development: https://github.com/Digdgeo/Ndvi2Gif
 
-Documentation: https://github.com/Digdgeo/Ndvi2Gif
+Documentation: https://digdgeo.github.io/Ndvi2Gif/
 
-NDVI2GIF allows researchers to generate multi seasonal composites based on statistical summaries of available Earth Observation indices. The package is not limited to vegetation indices and can work with any compatible remote sensing index available in GEE.
+Ndvi2Gif is a Python library for multi-temporal remote sensing analysis with Google Earth Engine.
+It provides seasonal compositing, 40+ vegetation and environmental indices, SAR preprocessing,
+time series analytics, land cover classification, and hydroperiod analysis — all server-side.
+
+Key features include:
+- 7 satellite and climate platforms (Sentinel-1/2/3, Landsat, MODIS, ERA5-Land, CHIRPS)
+- HydroperiodAnalyzer: GEE-native flood duration analysis using midpoint temporal weighting
+- 40+ vegetation and environmental indices with SAR preprocessing
+- 8 machine learning classification algorithms (supervised and unsupervised)
+- Time series analysis with trend detection and phenology metrics
 
 
 Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9810&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ndvi2gif-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/ndvi2gif-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/ndvi2gif-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -105,12 +115,12 @@ it is possible to build and upload installable packages to the
 [conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
-To manage the continuous integration and simplify feedstock maintenance
+To manage the continuous integration and simplify feedstock maintenance,
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
-For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
+For more information, please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
@@ -137,7 +147,7 @@ merged, the recipe will be re-built and uploaded automatically to the
 everybody to install and use from the `conda-forge` channel.
 Note that all branches in the conda-forge/ndvi2gif-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
-on branches in forks and branches in the main repository should only be used to
+on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
