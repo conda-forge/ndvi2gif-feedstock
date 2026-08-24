@@ -43,6 +43,7 @@ requirements:
 test:
   imports:
     - ndvi2gif
+    - ndvi2gif.ndvi2gif
     - ndvi2gif.s1_ard
     - ndvi2gif.timeseries
     - ndvi2gif.clasification
